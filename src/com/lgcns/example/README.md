@@ -18,14 +18,14 @@ Collections.sort(listPerson, Comparator.comparing(Person::getName).reversed());
 
 ~~~java
 System.out.printf("sorted by Ip : %s\n", Arrays.toString(listComputer.toArray()));
-
+~~~
 
 ## List creation
 * Arrays.asList(new Object(), new Object());
 
 ~~~java 
 List<Person> listPerson = Arrays.asList(new Person("A", 30), new Person("c", 27));
-
+~~~
 
 ## Map :: merge
 		List<Computer> listComputer = Arrays.asList(new Computer("127.0.0.1", "k8s master1", 4, 8),
