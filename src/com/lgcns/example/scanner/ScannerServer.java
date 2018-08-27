@@ -3,7 +3,6 @@ package com.lgcns.example.scanner;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -28,7 +27,6 @@ public class ScannerServer implements Runnable {
 		super();
 		this.port = port;
 		this.threadCount = threadCount;
-		this.pool = Executors.newFixedThreadPool(threadCount);
 	}
 
 	public int getPort() {
@@ -82,54 +80,6 @@ public class ScannerServer implements Runnable {
 				svrSoc = null;
 			} catch (IOException e) {
 				throw new RuntimeException("[ERROR] Problem occurred, while socket.accept", e);
-			}
-		}
-	}
-
-}
-
-class ReceiverThread implements Runnable {
-
-	private Socket socket = null;
-
-	public ReceiverThread(Socket socket) {
-		super();
-		this.socket = socket;
-	}
-
-	@Override
-	public void run() {
-		Scanner scanner = null;
-		try {
-			scanner = new Scanner(socket.getInputStream());
-
-			// TODO logic
-			int command = scanner.nextInt();
-			switch (command) {
-
-			case 1:
-				System.out.printf("case 1");
-			case 2:
-				System.out.printf("case 2");
-			default:
-				System.out.printf(", command: %d\n", command);
-
-			}
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			if (scanner != null) {
-				scanner.close();
-				scanner = null;
-			}
-			if (socket != null) {
-				try {
-					socket.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				socket = null;
 			}
 		}
 	}

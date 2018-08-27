@@ -42,38 +42,62 @@ public class ScannerClient implements Runnable {
 		Scanner svrScan = null;
 		Scanner keyScan = null;
 
-		// 1. socket connect
 		try {
-			soc = new Socket(this.ipAddr, port);
-		} catch (UnknownHostException e) {
-			throw new RuntimeException("[ERROR] UnknownHostException while creating Socket", e);
-		} catch (IOException e) {
-			throw new RuntimeException("[ERROR] IOException while creating Socket", e);
-		} 
-		
-		// 2. scanner ()
-		try {
-			svrScan = new Scanner(soc.getInputStream());
-			keyScan = new Scanner(System.in);
-		} catch (IOException e) {
-			throw new RuntimeException("[ERROR] IOException while creating Scanner", e);
-		}
+			// 1. socket connect
+			try {
+				soc = new Socket(this.ipAddr, port);
+			} catch (UnknownHostException e) {
+				throw new RuntimeException("[ERROR] UnknownHostException while creating Socket", e);
+			} catch (IOException e) {
+				throw new RuntimeException("[ERROR] IOException while creating Socket", e);
+			}
 
-		// 3. writer ()
-		try {
-			bw = new BufferedWriter(new OutputStreamWriter(soc.getOutputStream()));
+			// 2. scanner ()
+			try {
+				svrScan = new Scanner(soc.getInputStream());
+				keyScan = new Scanner(System.in);
+			} catch (IOException e) {
+				throw new RuntimeException("[ERROR] IOException while creating Scanner", e);
+			}
 
-			System.out.print("Please Key in Your command : ");
-			int read_1_int = keyScan.nextInt();
-			
-			// TODO logic here...
-			System.out.print("Logic...");
-			
-			
-		} catch (IOException e) {
+			// 3. writer ()
+			try {
+				bw = new BufferedWriter(new OutputStreamWriter(soc.getOutputStream()));
+
+				System.out.print("Please Key in Your command : ");
+				int read_1_int = keyScan.nextInt();
+
+				// TODO logic here...
+				System.out.print("Logic...");
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			if (soc != null) {
+				try {
+					soc.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			if (bw != null) {
+				try {
+					bw.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			if (svrScan != null) {
+				svrScan.close();
+			}
+			if (keyScan != null) {
+				keyScan.close();
+			}
 		}
-		
+
 	}
 
 	public static void main(String[] args) {
