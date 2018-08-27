@@ -30,4 +30,15 @@ public class Person implements Comparable<Person> {
 	public int compareTo(Person person) {
 		return this.age > person.age ? 1 : this.age < person.age ? -1 : 0;
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(getName());
+		sb.append("(");
+		sb.append(getAge());
+		sb.append(")");
+		
+		return sb.toString();
+	}
 }
