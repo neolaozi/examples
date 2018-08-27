@@ -17,14 +17,18 @@ System.out.printf("sorted by Ip : %s\n", Arrays.toString(listComputer.toArray())
 
 
 ## List creation
-* Arrays.asList(new Object(), new Object()); 
+* Arrays.asList(new Object(), new Object());
+ 
 List<Person> listPerson = Arrays.asList(new Person("A", 30), new Person("c", 27));
+
 
 ## File Reader, Writer
 
 * Reader
+
 br = new BufferedReader( new InputStreamReader(new FileInputStream(fileName), StandardCharsets.UTF_8));
 
 * Writer
+
 bw = new BufferedWriter(new FileWriter(reportfileName, false));
 
