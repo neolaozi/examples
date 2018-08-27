@@ -1,3 +1,8 @@
+# 쉽게 배우는 소프트웨어 공학 (네이버 지식백과) 
+
+https://terms.naver.com/list.nhn?cid=58528&categoryId=58528&so=st4.asc
+
+
 # Examples - The Quick Coding Guide
 
 
