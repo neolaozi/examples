@@ -16,12 +16,14 @@ Collections.sort(listPerson, Comparator.comparing(Person::getName).reversed());
 
 * Use [ Source - Generate toString() ] menu 
 
+~~~java
 System.out.printf("sorted by Ip : %s\n", Arrays.toString(listComputer.toArray()));
 
 
 ## List creation
 * Arrays.asList(new Object(), new Object());
- 
+
+~~~java 
 List<Person> listPerson = Arrays.asList(new Person("A", 30), new Person("c", 27));
 
 
