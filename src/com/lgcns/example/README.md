@@ -1,5 +1,8 @@
 # Examples - The Quick Coding Guide
 
+## print log
+System.out.printf("varName : %s %b", "value1");
+
 ## Lambda
 
 Collections.sort(listPerson, (g1, g2) -> g1.getName().compareTo(g2.getName()));
@@ -22,6 +25,17 @@ System.out.printf("sorted by Ip : %s\n", Arrays.toString(listComputer.toArray())
 List<Person> listPerson = Arrays.asList(new Person("A", 30), new Person("c", 27));
 
 
+## Map :: merge
+		List<Computer> listComputer = Arrays.asList(new Computer("127.0.0.1", "k8s master1", 4, 8),
+				new Computer("192.168.1.100", "worker 1", 16, 64), new Computer("127.0.0.1", "k8s master2", 4, 8),
+				new Computer("192.168.1.100", "worker 3", 32, 128), new Computer("127.0.0.1", "k8s master3", 4, 8),
+				new Computer("10.64.65.14", "nexus", 2, 4), new Computer("192.168.1.100", "worker 2", 16, 64));
+				
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		listComputer.stream().filter(c -> c.getCore() >= 2).forEach(c -> map.merge(c.getIp(), c.getCore(), Integer::sum));
+		System.out.printf("map:%s\n", map.toString());
+
+
 ## File Reader, Writer
 
 * Reader
@@ -31,4 +45,32 @@ br = new BufferedReader( new InputStreamReader(new FileInputStream(fileName), St
 * Writer
 
 bw = new BufferedWriter(new FileWriter(reportfileName, false));
+
+
+## String Reader, Writer
+
+* Reader
+	br = new BufferedReader(new InputStreamReader(is));
+	String readLine = null;
+	while((readLine = br.readLine()) != null) {
+		bw.write(readLine);
+	}
+
+
+* Writer
+
+	bw = new BufferedWriter(new FileWriter("TYPELOG_3_" + pattern + ".TXT", true));
+				bw.write(split[0] + "#" + split[1] + "#");
+	bw.newLine();
+	
+			
+## Execute when filter-condition fulfilled
+
+	public static void streamIfPresent() {
+		List<Contact> contacts = ContactSource.findAll();
+		contacts.stream()
+		.filter(c -> "Florida".equals(c.getState()))
+		.findFirst()
+		.ifPresent(c -> c.call());
+	}
 

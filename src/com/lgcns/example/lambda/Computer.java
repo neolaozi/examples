@@ -13,6 +13,14 @@ import com.lgcns.example.sort.Person;
 public class Computer {
 
 	public static void main(String[] args) {
+		
+		
+	}
+
+	/**
+	 * non-comparable Object sorting
+	 */
+	public static void testSortOnNonComparable() {
 		List<Computer> listComputer = Arrays.asList(new Computer("10.64.65.11", "k8s master1", 4, 8),
 				new Computer("10.64.65.13", "worker 1", 16, 64), new Computer("10.64.65.15", "k8s master2", 4, 8),
 				new Computer("10.64.65.16", "worker 3", 32, 128), new Computer("10.64.65.17", "k8s master3", 4, 8),
@@ -22,8 +30,6 @@ public class Computer {
 
 		System.out.printf("sorted by Ip : %s\n", listComputer.toString());
 		System.out.printf("sorted by Ip : %s\n", Arrays.toString(listComputer.toArray()));
-		
-		
 	}
 
 	private int core;
