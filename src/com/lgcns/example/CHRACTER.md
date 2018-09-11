@@ -5,14 +5,14 @@
 
 * String to Char
 
-java~~~
+~~~java
 String temp = "캐릭터 변환하기";
 char[] array = temp.toCharArray();
 ~~~
 
 * Char to String
 
-java~~~
+~~~java
 char[] array2 = {'a','b','c','d','e'};
 String arrayString = String.valueOf(array2);
 ~~~
