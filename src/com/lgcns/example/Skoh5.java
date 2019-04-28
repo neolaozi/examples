@@ -45,14 +45,14 @@ public class Skoh5 {
 	// http://hochulshin.com/java-multithreading-executor-basic/
 	// https://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/
 
-	// ÃÖ´ë°ø¾à¼ö
+	// ìµœëŒ€ê³µì•½ìˆ˜(GCD:greatest common divisor)
 	private long gcd(int p, int q) {
 		if (q == 0)
 			return p;
 		return gcd(q, p % q);
 	}
 
-	// ÃÖ¼Ò°ø¹è¼ö
+	// ìµœì†Œê³µë°°ìˆ˜(LCM:least common multiple)
 	private long lcm(int p, int q) {
 		return (long) (p * q) / gcd(p, q);
 	}
