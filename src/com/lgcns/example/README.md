@@ -2,6 +2,8 @@
 
 https://terms.naver.com/list.nhn?cid=58528&categoryId=58528&so=st4.asc
 
+출 제 영 역 : Chapter 01. 소 프 트 웨어 공 학 소개 , Chapter02. 소 프 트 웨어 개 발 프 로 세스
+Chapter 05. 상 위 설계 Chapter06. 하 위 설계
 
 # 정규표현식의 개념과 기초 문법
 
