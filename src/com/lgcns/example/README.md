@@ -1,12 +1,14 @@
 # 쉽게 배우는 소프트웨어 공학 (네이버 지식백과) 
 
+* 링크<BR>
 https://terms.naver.com/list.nhn?cid=58528&categoryId=58528&so=st4.asc
 
-※ 출제영역
-Chapter 01. 소프트웨어 공학 소개
-Chapter 02. 소프트웨어 개발 프로세스
-Chapter 05. 상위 설계
-Chapter 06. 하위 설계
+* 출제영역<BR>
+Chapter 01. 소프트웨어 공학 소개<BR>
+Chapter 02. 소프트웨어 개발 프로세스<BR>
+Chapter 05. 상위 설계<BR>
+Chapter 06. 하위 설계<BR>
+	
 
 # 정규표현식의 개념과 기초 문법
 
