@@ -33,7 +33,7 @@ public class LambdaSortTest {
 		personaList = getList();
 		List<Persona> sortedPersonaList = personaList.stream().sorted((h1, h2) -> h1.getName().compareTo(h2.getName())).collect(Collectors.toList());
 		
-		System.out.println("org List<Persona> -->");
+		System.out.println("original List<Persona> -->");
 		personaList.forEach(System.out::println);
 		
 		System.out.println("sorted List<Persona> -->");
