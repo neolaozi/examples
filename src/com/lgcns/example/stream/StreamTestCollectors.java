@@ -3,6 +3,7 @@ package com.lgcns.example.stream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -25,8 +26,14 @@ public class StreamTestCollectors {
 		// C:\ssp_workspace\ssp_java_test\java-utils\resource\titanic3.xls
 		
 		// Stream<String> lines = Files.lines(Paths.get("titanic3.xls"));
-		Stream<String> lines = Files.lines(Paths.get("C:/ssp_workspace/ssp_java_test/java-utils/resource/titanic3.xls"));
-		System.out.printf("lines:%s\n", lines);
+		Stream<String> lines = Files.lines(Paths.get("C:/_20200623_110727.log"));
+		List<String> collect = lines.collect(Collectors.toList());
+		
+		System.out.println("\n\n## Arrays.toString(collect.toArray()) ## :");
+		System.out.println(Arrays.toString(collect.toArray()));
+		
+		System.out.println("\n\n## collect.forEach(System.out::println) ## :");
+		collect.forEach(System.out::println);
 	}
 	
 	private static void collectorsGroupBy() {
