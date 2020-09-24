@@ -13,7 +13,8 @@ public class LambdaSortTest {
 		List<Persona> personaList;
 		personaList = getList();
 		personaList.sort((h1, h2) -> h1.getName().compareTo(h2.getName()));
-		System.out.println("personaList.sort((h1, h2) -> h1.getName().compareTo(h2.getName()))-->");
+		
+		System.out.println("(1) simple sort");
 		personaList.forEach(System.out::println);
 
 		// by name. if equal name then age
@@ -25,7 +26,7 @@ public class LambdaSortTest {
 	            return lhs.getName().compareTo(rhs.getName());
 	        }
 	    });
-		System.out.println("personaList.sort name. if equal name then age -->");
+		System.out.println("(2) by name, if name equals then age");
 		personaList.forEach(System.out::println);
 		
 		
@@ -33,10 +34,10 @@ public class LambdaSortTest {
 		personaList = getList();
 		List<Persona> sortedPersonaList = personaList.stream().sorted((h1, h2) -> h1.getName().compareTo(h2.getName())).collect(Collectors.toList());
 		
-		System.out.println("original List<Persona> -->");
+		System.out.println("(3) org list");
 		personaList.forEach(System.out::println);
 		
-		System.out.println("sorted List<Persona> -->");
+		System.out.println("(4) sorted list");
 		sortedPersonaList.forEach(System.out::println);
 		
 	}
