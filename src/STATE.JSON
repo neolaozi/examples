@@ -1,0 +1,26 @@
+{
+  "state": {
+    "create": {
+      "type": "action",
+      "url": "http://127.0.0.1:8081/create",
+      "parameters": [
+        "id"
+      ]
+    },
+    "add": {
+      "type": "action",
+      "url": "http://127.0.0.1:8082/add",
+      "parameters": [
+        "id",
+        "key",
+        "data",
+        "plus"
+      ]
+    },
+    "fetch": {
+      "type": "action",
+      "url": "http://127.0.0.1:8083/fetch",
+      "parameters": []
+    }
+  }
+}
