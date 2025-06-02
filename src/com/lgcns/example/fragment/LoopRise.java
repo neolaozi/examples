@@ -28,9 +28,9 @@ public class LoopRise {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		LoopRise.forAddResult(3);
+		LoopRise.forAddResult(10);
 		System.out.println("##############");
-		LoopRise.whileAddResult(3);
+		LoopRise.whileAddResult(10);
 	}
 
 }
